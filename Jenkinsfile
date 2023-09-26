@@ -22,7 +22,7 @@ pipeline {
                     // Clean and deploy with Maven
                    // def mvnCmd = "${mavenHome}/bin/mvn"
                    // def deployCmd = "${mvnCmd} clean deploy -f ${pomFile}"
-                    sh 'mvn -f ${pomFile}, clean deploy' 
+                    sh 'mvn -f "${pomFile}", clean deploy' 
 
                     // Execute the Maven command
                     sh script: deployCmd, returnStatus: true
