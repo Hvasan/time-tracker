@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out your Git repository here
-                // Example: git url: 'https://github.com/your/repo.git', branch: 'main'
+                git url: 'https://github.com/Hvasan/time-tracker.git', branch: 'master'
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Define the path to your pom.xml file
-                    def pomFile = 'path/to/your/pom.xml'
+                    def pomFile = 'Hvasan/time-tracker/pom.xml'
                     // Set the Maven version
                     def mavenHome = tool name: 'Maven 3.8.4', type: 'hudson.tasks.Maven$MavenInstallation'
 
