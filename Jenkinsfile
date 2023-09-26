@@ -18,13 +18,14 @@ pipeline {
             steps {
                 script {
                     // Define the path to your pom.xml file
-                    def pomFile = 'Hvasan/time-tracker/pom.xml'
+                    def pomFile = 'time-tracker/pom.xml'
                     // Set the Maven version
                    // def mavenHome = tool name: 'Maven 3.8.4', type: 'hudson.tasks.Maven$MavenInstallation'
                     sh 'mvn --version'
                     // Clean and deploy with Maven
-                    def mvnCmd = "${mavenHome}/bin/mvn"
-                    def deployCmd = "${mvnCmd} clean deploy -f ${pomFile}"
+                   // def mvnCmd = "${mavenHome}/bin/mvn"
+                   // def deployCmd = "${mvnCmd} clean deploy -f ${pomFile}"
+                    sh 'mvn -f ${pomFile}, clean deploy' 
 
                     // Execute the Maven command
                     sh script: deployCmd, returnStatus: true
