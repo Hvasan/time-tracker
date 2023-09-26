@@ -1,8 +1,5 @@
 pipeline {
     agent any
-   // {
-   //   label 'linux'
-   //  }
      tools {
       maven '3.8.4'
      }
@@ -18,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Define the path to your pom.xml file
-                    def pomFile = 'time-tracker/pom.xml'
+                    def pomFile = 'Hvasan/time-tracker/pom.xml'
                     // Set the Maven version
                    // def mavenHome = tool name: 'Maven 3.8.4', type: 'hudson.tasks.Maven$MavenInstallation'
                     sh 'mvn --version'
